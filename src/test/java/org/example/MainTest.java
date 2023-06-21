@@ -26,7 +26,12 @@ class MainTest {
     }
 
     @Test
-    void testWikipediaSearch(){
+    public void holamundo(){
+        System.out.println("Hola mundo");
+        assertTrue(true);
+    }
+    @Test
+    public void testWikipediaSearch(){
         //Obtiene una URL, navega al sitio.
         driver.get("https://www.wikipedia.org/");
 
