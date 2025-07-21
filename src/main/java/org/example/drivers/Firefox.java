@@ -2,12 +2,17 @@ package org.example.drivers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Firefox implements DriverStrategy {
     @Override
     public WebDriver setStrategy() {
-        System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
-        WebDriver driver= new FirefoxDriver();
-        return driver;
+        WebDriverManager.firefoxdriver().setup(); 
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        options.addPreference("intl.accept_languages", "es-CL");
+        return new FirefoxDriver(options);
     }
 }
