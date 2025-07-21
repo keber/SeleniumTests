@@ -1,0 +1,83 @@
+name: Java CI
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches: [main]
+
+jobs:
+  
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ github.ref != 'refs/heads/main' }}
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        
+    - name: Run tests
+      run: mvn clean verify
+      
+    - name: Generate Test badge
+      if: success() || failure()
+      uses: gaelgirodon/ci-badges-action@v1
+      with:
+        gist-id: ${{ secrets.GIST_ID }} 
+        token: ${{ secrets.GIST_TOKEN }}
+
+    - name: Upload reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: maven-test-reports
+        path: |
+          target/site/jacoco/
+          target/site/surefire-report/
+
+  publish-reports:
+    name: Upload Coverage and Publish Reports to GitHub Pages
+    needs: test
+    if: always()
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        
+    - name: Compile for Sonar
+      run: mvn compile
+
+    - name: Download reports
+      uses: actions/download-artifact@v4
+      with:
+        name: maven-test-reports
+        path: target/site/
+
+    - name: Combine JaCoCo and Surefire reports
+      if: success() || failure()
+      run: |
+        mkdir -p target/site/combined
+        cp -r target/site/jacoco target/site/combined/coverage
+        cp -r target/site/surefire-report target/site/combined/tests
+        cp target/site/surefire-report/surefire-report.html target/site/combined/tests/index.html
+
+    - name: Deploy reports to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./target/site/combined
+        force_orphan: true
