@@ -23,7 +23,18 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '17'
-        
+
+    - name: Install Chrome
+      uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: 'stable'
+        install-chromedriver: true
+
+    - name: Install Firefox
+      uses: browser-actions/setup-firefox@v1
+      with:
+        firefox-version: 'stable' 
+          
     - name: Run tests
       run: mvn clean verify
       
