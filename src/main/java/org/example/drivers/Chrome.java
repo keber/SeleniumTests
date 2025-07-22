@@ -1,6 +1,8 @@
 package org.example.drivers;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,6 +23,11 @@ public class Chrome implements DriverStrategy {
         options.addArguments("--headless=new");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--lang=es-CL");
+
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("intl.accept_languages", "es-CL,es");
+        options.setExperimentalOption("prefs", prefs);
+ 
         return new ChromeDriver(options);
     }
 }
