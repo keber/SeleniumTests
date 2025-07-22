@@ -50,7 +50,6 @@ jobs:
       with:
         name: maven-test-reports
         path: |
-          target/site/jacoco/
           target/site/surefire-report/
 
   publish-reports:
@@ -82,7 +81,6 @@ jobs:
       if: success() || failure()
       run: |
         mkdir -p target/site/combined
-        cp -r target/site/jacoco target/site/combined/coverage
         cp -r target/site/surefire-report target/site/combined/tests
         cp target/site/surefire-report/surefire-report.html target/site/combined/tests/index.html
 
