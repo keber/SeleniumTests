@@ -33,7 +33,7 @@ jobs:
     - name: Install Firefox
       uses: browser-actions/setup-firefox@v1
       with:
-        firefox-version: 'stable' 
+        firefox-version: 'latest' 
           
     - name: Run tests
       run: mvn clean verify
