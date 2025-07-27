@@ -48,11 +48,11 @@ public abstract class GenericBrowserTest {
 
     protected void takeScreenshot(String name) {
         TakesScreenshot screenshot = (TakesScreenshot) driver;
-        File src = screenshot.getScreenshotAs(OutputType.FILE);
+        File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
         try {
             Files.createDirectories(Path.of("screenshots"));
             Files.copy(
-                src.toPath(),
+                screenshotFile.toPath(),
                 Path.of(String.format("screenshots/%s_%s_%d.png", getBrowserName(), name, System.currentTimeMillis()))
             );
         } catch (IOException e) {
