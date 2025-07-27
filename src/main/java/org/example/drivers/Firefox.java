@@ -12,7 +12,7 @@ public class Firefox implements DriverStrategy {
         WebDriverManager.firefoxdriver().setup(); 
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
-        options.addPreference("intl.accept_languages", "es-CL");
+        options.addPreference("intl.accept_languages", "es");
         return new FirefoxDriver(options);
     }
 }
