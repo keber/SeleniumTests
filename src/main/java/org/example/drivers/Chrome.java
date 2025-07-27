@@ -15,6 +15,7 @@ public class Chrome implements DriverStrategy {
     public WebDriver setStrategy() {
         
         WebDriverManager.chromedriver().setup();
+        boolean isCI = System.getenv("CI") != null;
         
         ChromeOptions options= new ChromeOptions();
         options.setExperimentalOption("useAutomationExtension", false);
@@ -23,6 +24,10 @@ public class Chrome implements DriverStrategy {
         options.addArguments("--headless=new");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--lang=es-CL");
+
+        if ( !isCI ){
+            options.addArguments("--remote-debugging-port=9222");
+        }
 
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("intl.accept_languages", "es-CL,es");
