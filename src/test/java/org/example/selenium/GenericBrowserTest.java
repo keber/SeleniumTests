@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Duration;
 import java.util.logging.Logger;
 
 import org.example.drivers.DriverSingleton;
+import org.example.pages.LoginPage;
 import org.junit.jupiter.api.AfterAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeAll;
@@ -19,7 +21,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -29,6 +33,8 @@ public abstract class GenericBrowserTest {
     protected WebDriver driver;
     protected DriverSingleton driverSingleton;
     protected final Logger logger = Logger.getLogger(getClass().getName());
+    protected LoginPage loginPage;
+
 
     protected abstract String getBrowserName();
 
@@ -36,6 +42,7 @@ public abstract class GenericBrowserTest {
     void setup() {
         driverSingleton = DriverSingleton.getInstance(getBrowserName());
         driver = driverSingleton.getDriver();
+        loginPage = new LoginPage(driver); 
         logger.info("Inicializando navegador ".concat(getBrowserName() ));
     }
 
@@ -62,44 +69,39 @@ public abstract class GenericBrowserTest {
 
     @Test
     @Order(1)
-    void testWikipediaSearch(){
-        //Obtiene una URL, navega al sitio.
-        driver.get("https://www.wikipedia.org/");
+    void testLoginFailedWrongUser(){
 
-        //Buscar un texto:
-        WebElement searchBox= driver.findElement(By.id("searchInput"));
-        String busqueda= "gatos";
-        searchBox.sendKeys(busqueda);
+        driver.get("https://wallet.keber.cl/");
 
-        //DAR CLICK AL BUTTON
-        WebElement buttonSearch= driver.findElement(By.cssSelector("#search-form > fieldset > button"));
-        buttonSearch.click();
+        String email = "unkown@notvalid.com";
+        String password = "123456789";
 
-        takeScreenshot("wikipediaSearch_result");
+        loginPage.login(email, password);
+        takeScreenshot("LoginFailedWrongUser_result_before");
 
-        //validar si funciono
-        WebElement titleSearchedPage= driver.findElement(By.cssSelector("#firstHeading > span"));
-        assertEquals("Felis catus", titleSearchedPage.getText());
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-error-message")));
+        takeScreenshot("LoginFailedWrongUser_result_after");
+
+        assertEquals("Credenciales incorrectas", loginPage.getErrorMessage());
     }
 
     @Test
     @Order(2)
-    void testWikipediaURL(){
-        driver.get("https://www.wikipedia.org/");
+    void testLoginFailedWrongPassword(){
+        driver.get("https://wallet.keber.cl/");
 
-        //Buscar un texto:
-        WebElement searchBox= driver.findElement(By.id("searchInput"));
-        String busqueda= "gatos";
-        searchBox.sendKeys(busqueda);
+        String email = "keberflores@gmail.com";
+        String password = "123456789";
 
-        //DAR CLICK AL BUTTON
-        WebElement buttonSearch= driver.findElement(By.cssSelector("#search-form > fieldset > button"));
-        buttonSearch.click();
+        loginPage.login(email, password);
+        takeScreenshot("LoginFailedWrongPassword_result_before");
 
-        takeScreenshot("wikipediaURL_result");  
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-error-message")));
+        takeScreenshot("LoginFailedWrongPassword_result_after");
 
-        //validar si funciono
-        assertEquals("https://es.wikipedia.org/wiki/Felis_catus", driver.getCurrentUrl());
+        assertEquals("Credenciales incorrectas", loginPage.getErrorMessage());
     }
 
 }
