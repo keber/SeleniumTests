@@ -1,4 +1,4 @@
-package org.example.playwright;
+package org.example.junit.playwright;
 
 import java.io.IOException;
 import java.nio.file.Files;

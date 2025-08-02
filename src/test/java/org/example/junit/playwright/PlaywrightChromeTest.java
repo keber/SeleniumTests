@@ -1,4 +1,4 @@
-package org.example.playwright;
+package org.example.junit.playwright;
 
 public class PlaywrightChromeTest extends GenericBrowserTest {
     @Override

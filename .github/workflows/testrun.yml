@@ -50,10 +50,10 @@ jobs:
       with:
         name: maven-test-reports
         path: |
-          target/site/surefire-report/
+          target/failsafe-reports/
 
   publish-reports:
-    name: Upload Coverage and Publish Reports to GitHub Pages
+    name: Upload and Publish Reports to GitHub Pages
     needs: test
     if: always()
     runs-on: ubuntu-latest
@@ -75,18 +75,18 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: maven-test-reports
-        path: target/site/
+        path: target/failsafe-reports/
 
-    - name: Combine JaCoCo and Surefire reports
-      if: success() || failure()
-      run: |
-        mkdir -p target/site/combined
-        cp -r target/site/surefire-report target/site/combined/tests
-        cp target/site/surefire-report/surefire-report.html target/site/combined/tests/index.html
+    #- name: Combine Failsafe TestNG reports
+    #  if: success() || failure()
+    #  run: |
+    #    mkdir -p target/site/combined
+    #    cp -r target/site/failsafe-reports target/site/combined
+    #    cp target/site/failsafe-reports/index.html target/site/combined/index.html
 
     - name: Deploy reports to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./target/site/combined
+        publish_dir: ./target/failsafe-reports
         force_orphan: true

@@ -1,4 +1,4 @@
-package org.example.selenium;
+package org.example.junit.selenium;
 
 import java.io.File;
 import java.io.IOException;
@@ -43,7 +43,7 @@ public abstract class GenericBrowserTest {
         driverSingleton = DriverSingleton.getInstance(getBrowserName());
         driver = driverSingleton.getDriver();
         loginPage = new LoginPage(driver); 
-        logger.info("Inicializando navegador ".concat(getBrowserName() ));
+        logger.info("Inicializando navegador con Selenium: ".concat(getBrowserName() ));
     }
 
     @AfterAll

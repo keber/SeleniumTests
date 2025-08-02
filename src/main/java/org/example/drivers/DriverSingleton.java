@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 
+@Deprecated
 public class DriverSingleton {
     private static DriverSingleton instance = null;
     private static WebDriver driver;
