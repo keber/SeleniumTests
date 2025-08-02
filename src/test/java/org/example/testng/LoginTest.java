@@ -28,13 +28,14 @@ public class LoginTest {
   
     @Parameters({"browser", "baseUrl"})
     @BeforeMethod
-    public void setUp(@Optional("chrome") String browser, @Optional("https://wallet.keber.cl/") String baseUrl) {
+    public void setUp(String browser, @Optional("https://wallet.keber.cl/") String baseUrl) {
     //public void setUp(String browser, String baseUrl) {
         DriverStrategy strategy = DriverStrategySelector.chooseStrategy(browser);
         this.driver = strategy.setStrategy();
         this.browser = browser;
         this.driver.get(baseUrl);
         this.loginPage = new LoginPage(this.driver);
+        logger.info("Inicializando navegador con TestNG: ".concat(browser));
     }
 
     @AfterMethod

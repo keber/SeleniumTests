@@ -43,7 +43,7 @@ public abstract class GenericBrowserTest {
         driverSingleton = DriverSingleton.getInstance(getBrowserName());
         driver = driverSingleton.getDriver();
         loginPage = new LoginPage(driver); 
-        logger.info("Inicializando navegador ".concat(getBrowserName() ));
+        logger.info("Inicializando navegador con Selenium: ".concat(getBrowserName() ));
     }
 
     @AfterAll

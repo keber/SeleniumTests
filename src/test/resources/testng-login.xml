@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="LoginSuite" parallel="classes" thread-count="2">
+<suite name="LoginSuite" parallel="tests" thread-count="2">
   <parameter name="baseUrl" value="https://wallet.keber.cl/" />
   <parameter name="credentialsFile" value="credentials.tsv" />
 
