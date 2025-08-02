@@ -3,13 +3,13 @@ package org.example.drivers;
 public class DriverStrategySelector {
 
     public static DriverStrategy chooseStrategy(String browser){
-        switch (browser){
-            case "Chrome":
+        switch (browser.toLowerCase()){
+            case "chrome":
                 return new Chrome();
-            case "Firefox":
+            case "firefox":
                 return new Firefox();
             default:
-                return null;
+                throw new IllegalArgumentException("Browser no soportado: ".concat(browser));
         }
     }
 }

@@ -1,4 +1,4 @@
-package org.example.selenium;
+package org.example.junit.selenium;
 
 import java.io.File;
 import java.io.IOException;
