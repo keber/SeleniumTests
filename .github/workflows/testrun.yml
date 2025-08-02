@@ -50,7 +50,7 @@ jobs:
       with:
         name: maven-test-reports
         path: |
-          target/site/failsafe-reports/
+          target/failsafe-reports/
 
   publish-reports:
     name: Upload and Publish Reports to GitHub Pages
