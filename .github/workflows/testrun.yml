@@ -57,7 +57,6 @@ jobs:
       run: |
         ls -larth ./
         ls -larth target/
-        ls -larth build/
 
     - name: Build test report
       uses: simple-elf/allure-report-action@v1.7
@@ -65,7 +64,7 @@ jobs:
       with:
         gh_pages: gh-pages
         allure_history: allure-history
-        allure_results: build/allure-results
+        allure_results: allure-results
 
     - name: Upload reports
       uses: actions/upload-artifact@v4
