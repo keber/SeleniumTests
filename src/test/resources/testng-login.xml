@@ -3,6 +3,9 @@
   <parameter name="baseUrl" value="https://wallet.keber.cl/" />
   <parameter name="credentialsFile" value="credentials.tsv" />
 
+  <listeners>
+      <listener class-name="io.qameta.allure.testng.AllureTestNg" />
+  </listeners>
   <test name="LoginChrome">
     <parameter name="browser" value="chrome" />
     <classes>

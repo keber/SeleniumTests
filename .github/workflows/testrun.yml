@@ -36,8 +36,21 @@ jobs:
         firefox-version: 'latest' 
           
     - name: Run tests
-      run: mvn clean verify
-      
+      run: mvn clean verify -P testng-tests
+
+    - name: List current directory contents
+      run: |
+        ls -larth ./
+        ls -larth target/
+
+    - name: Load Allure test report history
+      uses: actions/checkout@v4
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+
     - name: Generate Test badge
       if: success() || failure()
       uses: gaelgirodon/ci-badges-action@v1
@@ -45,19 +58,33 @@ jobs:
         gist-id: ${{ secrets.GIST_ID }} 
         token: ${{ secrets.GIST_TOKEN }}
 
-    - name: Upload reports
+    - name: Build allure test report
+      uses: simple-elf/allure-report-action@v1.7
+      if: always()
+      with:
+        gh_pages: gh-pages
+        allure_history: allure-history
+        allure_results: target/allure-results
+
+    - name: Upload testng report
       uses: actions/upload-artifact@v4
       with:
-        name: maven-test-reports
+        name: maven-testng-report
         path: |
-          target/failsafe-reports/
+          target/surefire-reports/
+          
+    - name: Upload allure report
+      uses: actions/upload-artifact@v4
+      with:
+        name: maven-allure-report
+        path: |
+          allure-history
 
   publish-reports:
     name: Upload and Publish Reports to GitHub Pages
     needs: test
     if: always()
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
@@ -71,22 +98,36 @@ jobs:
     - name: Compile for Sonar
       run: mvn compile
 
-    - name: Download reports
+    - name: Download testng reports
       uses: actions/download-artifact@v4
       with:
-        name: maven-test-reports
-        path: target/failsafe-reports/
+        name: maven-testng-report
+        path: |
+          reports/testng-reports
 
-    #- name: Combine Failsafe TestNG reports
-    #  if: success() || failure()
-    #  run: |
-    #    mkdir -p target/site/combined
-    #    cp -r target/site/failsafe-reports target/site/combined
-    #    cp target/site/failsafe-reports/index.html target/site/combined/index.html
+    - name: Download allure reports
+      uses: actions/download-artifact@v4
+      with:
+        name: maven-allure-report
+        path: |
+          reports/allure-history
+
+    - name: List current directory contents
+      run: |
+        ls -larth ./
+        ls -larth reports/
+
+    - name: Combine Allure TestNG reports
+      if: success() || failure()
+      run: |
+        mkdir -p target/combined
+        mkdir -p target/combined/testng
+        cp -r reports/allure-history/* target/combined/
+        cp -r reports/testng-reports/* target/combined/testng
 
     - name: Deploy reports to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./target/failsafe-reports
+        publish_dir: ./target/combined
         force_orphan: true
