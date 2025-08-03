@@ -8,6 +8,7 @@ import org.example.drivers.DriverStrategy;
 import org.example.drivers.DriverStrategySelector;
 import org.example.pages.LoginPage;
 import org.example.utils.Utils;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -58,7 +59,6 @@ public class LoginTest implements ITest {
             this.driver.quit();
         }
     }
-
     
     @Test(dataProvider = "genericData", description = "Login con distintos escenarios")
     @Description("Prueba el inicio de sesión con distintos usuarios y contraseñas")

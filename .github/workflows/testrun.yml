@@ -78,14 +78,13 @@ jobs:
       with:
         name: maven-allure-report
         path: |
-          allure-history        
+          allure-history
 
   publish-reports:
     name: Upload and Publish Reports to GitHub Pages
     needs: test
     if: always()
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4

@@ -6,7 +6,6 @@
   <listeners>
       <listener class-name="io.qameta.allure.testng.AllureTestNg" />
   </listeners>
-
   <test name="LoginChrome">
     <parameter name="browser" value="chrome" />
     <classes>
