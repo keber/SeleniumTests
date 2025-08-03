@@ -53,11 +53,6 @@ jobs:
         gist-id: ${{ secrets.GIST_ID }} 
         token: ${{ secrets.GIST_TOKEN }}
 
-    - name: List current directory contents
-      run: |
-        ls -larth ./
-        ls -larth target/
-
     - name: Build test report
       uses: simple-elf/allure-report-action@v1.7
       if: always()
@@ -99,6 +94,11 @@ jobs:
         name: maven-test-reports
         path: |
           reports/
+
+    - name: List current directory contents
+      run: |
+        ls -larth ./
+        ls -larth reports/
 
     - name: Combine Failsafe TestNG reports
       if: success() || failure()
