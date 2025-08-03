@@ -15,11 +15,6 @@ jobs:
     continue-on-error: ${{ github.ref != 'refs/heads/main' }}
 
     steps:
-    - name: Install Allure CLI
-      run: |
-        sudo apt update
-        sudo apt install -y allure
-
     - name: Checkout repo
       uses: actions/checkout@v4
 
@@ -42,7 +37,15 @@ jobs:
           
     - name: Run tests
       run: mvn clean verify
-      
+
+    - name: Load Allure test report history
+      uses: actions/checkout@v4
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+
     - name: Generate Test badge
       if: success() || failure()
       uses: gaelgirodon/ci-badges-action@v1
@@ -50,9 +53,13 @@ jobs:
         gist-id: ${{ secrets.GIST_ID }} 
         token: ${{ secrets.GIST_TOKEN }}
 
-    - name: Generate Allure report
-      run: |
-        allure generate target/allure-results -o target/allure-report --clean
+    - name: Build test report
+      uses: simple-elf/allure-report-action@v1.7
+      if: always()
+      with:
+        gh_pages: gh-pages
+        allure_history: allure-history
+        allure_results: build/allure-results
 
     - name: Upload reports
       uses: actions/upload-artifact@v4
@@ -60,7 +67,7 @@ jobs:
         name: maven-test-reports
         path: |
           target/failsafe-reports/
-          target/allure-reports/
+          allure-history
 
   publish-reports:
     name: Upload and Publish Reports to GitHub Pages
@@ -87,14 +94,14 @@ jobs:
         name: maven-test-reports
         path: |
           target/failsafe-reports/
-          target/allure-reports/
+          allure-history
 
     - name: Combine Failsafe TestNG reports
       if: success() || failure()
       run: |
         mkdir -p target/combined
         cp -r target/failsafe-reports target/combined
-        cp -r target/allure-reports target/combined/allure/
+        cp -r history target/combined/allure/
 
     - name: Deploy reports to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
