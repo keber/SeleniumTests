@@ -101,7 +101,7 @@ jobs:
       run: |
         mkdir -p target/combined
         cp -r target/failsafe-reports target/combined
-        cp -r history target/combined/allure/
+        cp -r allure-history target/combined/allure/
 
     - name: Deploy reports to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
