@@ -64,7 +64,7 @@ jobs:
       with:
         gh_pages: gh-pages
         allure_history: allure-history
-        allure_results: allure-results
+        allure_results: target/allure-results
 
     - name: Upload testng report
       uses: actions/upload-artifact@v4
