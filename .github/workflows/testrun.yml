@@ -58,7 +58,7 @@ jobs:
         gist-id: ${{ secrets.GIST_ID }} 
         token: ${{ secrets.GIST_TOKEN }}
 
-    - name: Build test report
+    - name: Build allure test report
       uses: simple-elf/allure-report-action@v1.7
       if: always()
       with:
@@ -104,7 +104,7 @@ jobs:
       with:
         name: maven-testng-report
         path: |
-          reports/failsafe-reports
+          reports/testng-reports
 
     - name: Download allure reports
       uses: actions/download-artifact@v4
@@ -118,13 +118,13 @@ jobs:
         ls -larth ./
         ls -larth reports/
 
-    - name: Combine Failsafe TestNG reports
+    - name: Combine Allure TestNG reports
       if: success() || failure()
       run: |
         mkdir -p target/combined
-        mkdir -p target/combined/allure
-        cp -r reports/failsafe-reports target/combined
-        cp -r reports/allure-history target/combined/allure/
+        mkdir -p target/combined/testng
+        cp -r reports/testng-reports target/combined/testng
+        cp -r reports/allure-history target/combined/
 
     - name: Deploy reports to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
