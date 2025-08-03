@@ -98,16 +98,15 @@ jobs:
       with:
         name: maven-test-reports
         path: |
-          target/failsafe-reports/
-          allure-history
+          reports/
 
     - name: Combine Failsafe TestNG reports
       if: success() || failure()
       run: |
         mkdir -p target/combined
         mkdir -p target/combined/allure
-        cp -r target/failsafe-reports target/combined
-        cp -r allure-history target/combined/allure/
+        cp -r reports/target/failsafe-reports target/combined
+        cp -r reports/allure-history target/combined/allure/
 
     - name: Deploy reports to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
