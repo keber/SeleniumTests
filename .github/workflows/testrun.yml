@@ -123,8 +123,8 @@ jobs:
       run: |
         mkdir -p target/combined
         mkdir -p target/combined/testng
-        cp -r reports/testng-reports/ target/combined/testng
-        cp -r reports/allure-history/ target/combined/
+        cp -r reports/allure-history/* target/combined/
+        cp -r reports/testng-reports/* target/combined/testng
 
     - name: Deploy reports to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
