@@ -16,10 +16,19 @@ public class LoginPage {
     private final By passwordInput = By.id("login-password");
     private final By loginButton = By.id("login-button");
     private final By errorMessage = By.id("login-error-message");
+    private final By successMessage = By.id("login-success-message");
 
     // Constructor
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public By get_errorMessage(){
+        return this.errorMessage;
+    }
+
+    public By get_successMessage(){
+        return this.successMessage;
     }
 
     // Acciones
@@ -48,6 +57,10 @@ public class LoginPage {
 
     public String getErrorMessage() {
         return driver.findElement(errorMessage).getText();
+    }
+
+    public String getSuccessMessage() {
+        return driver.findElement(successMessage).getText();
     }
 
     public boolean isErrorVisible() {
