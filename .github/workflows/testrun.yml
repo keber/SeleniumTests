@@ -36,7 +36,7 @@ jobs:
         firefox-version: 'latest' 
           
     - name: Run tests
-      run: mvn clean verify
+      run: mvn clean verify -P testng-tests
 
     - name: Load Allure test report history
       uses: actions/checkout@v4
@@ -105,6 +105,7 @@ jobs:
       if: success() || failure()
       run: |
         mkdir -p target/combined
+        mkdir -p target/combined/allure
         cp -r target/failsafe-reports target/combined
         cp -r allure-history target/combined/allure/
 
