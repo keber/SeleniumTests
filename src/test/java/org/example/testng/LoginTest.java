@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.testng.Assert.assertEquals;
 
+import org.testng.ITest;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -20,9 +21,13 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import io.qameta.allure.*;
 
-
-public class LoginTest {
+// anotaciones de allure
+@Epic("Login")
+@Feature("Validación de crecenciales")
+public class LoginTest implements ITest {
+    private String testName = "";
 
     private WebDriver driver;
     protected final Logger logger = Logger.getLogger(getClass().getName());
@@ -54,8 +59,11 @@ public class LoginTest {
         }
     }
 
-    @Test(dataProvider = "genericData")
+    
+    @Test(dataProvider = "genericData", description = "Login con distintos escenarios")
+    @Description("Prueba el inicio de sesión con distintos usuarios y contraseñas")
     public void testLogin(String email, String password, String expectedResult, String expectedMessage){
+        testName = String.format("Logn [%s - %s] -> %s", email, password, expectedResult);
 
         loginPage.login(email, password);
         Utils.takeScreenshot("testng_testLogin_before",this.driver,this.browser);
@@ -73,5 +81,10 @@ public class LoginTest {
 
         Utils.takeScreenshot("testng_testLogin_after",this.driver,this.browser);
 
+    }
+
+    @Override
+    public String getTestName() {
+        return testName;
     }
 }

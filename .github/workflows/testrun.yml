@@ -15,6 +15,11 @@ jobs:
     continue-on-error: ${{ github.ref != 'refs/heads/main' }}
 
     steps:
+    - name: Install Allure CLI
+      run: |
+        sudo apt update
+        sudo apt install -y allure
+
     - name: Checkout repo
       uses: actions/checkout@v4
 
@@ -45,12 +50,17 @@ jobs:
         gist-id: ${{ secrets.GIST_ID }} 
         token: ${{ secrets.GIST_TOKEN }}
 
+    - name: Generate Allure report
+      run: |
+        allure generate target/allure-results -o target/allure-report --clean
+
     - name: Upload reports
       uses: actions/upload-artifact@v4
       with:
         name: maven-test-reports
         path: |
           target/failsafe-reports/
+          target/allure-reports/
 
   publish-reports:
     name: Upload and Publish Reports to GitHub Pages
@@ -75,18 +85,20 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: maven-test-reports
-        path: target/failsafe-reports/
+        path: |
+          target/failsafe-reports/
+          target/allure-reports/
 
-    #- name: Combine Failsafe TestNG reports
-    #  if: success() || failure()
-    #  run: |
-    #    mkdir -p target/site/combined
-    #    cp -r target/site/failsafe-reports target/site/combined
-    #    cp target/site/failsafe-reports/index.html target/site/combined/index.html
+    - name: Combine Failsafe TestNG reports
+      if: success() || failure()
+      run: |
+        mkdir -p target/combined
+        cp -r target/failsafe-reports target/combined
+        cp -r target/allure-reports target/combined/allure/
 
     - name: Deploy reports to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./target/failsafe-reports
+        publish_dir: ./target/combined
         force_orphan: true

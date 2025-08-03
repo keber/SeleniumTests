@@ -1,366 +1,413 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+    <project xmlns="http://maven.apache.org/POM/4.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>SeleniumTestingFramework</artifactId>
-    <version>1.0-SNAPSHOT</version>
+        <groupId>org.example</groupId>
+        <artifactId>SeleniumTestingFramework</artifactId>
+        <version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+        <properties>
+            <maven.compiler.source>17</maven.compiler.source>
+            <maven.compiler.target>17</maven.compiler.target>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <allure.version>2.29.0</allure.version>
+            <aspectj.version>1.9.22</aspectj.version>
+        </properties>
 
-    <dependencyManagement>
-        
+        <dependencyManagement>
+            
+            <dependencies>
+                <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-java</artifactId>
+                    <version>4.21.0</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>io.github.bonigarcia</groupId>
+                    <artifactId>webdrivermanager</artifactId>
+                    <version>5.8.0</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>com.microsoft.playwright</groupId>
+                    <artifactId>playwright</artifactId>
+                    <version>1.44.0</version>
+                </dependency>
+                
+                <dependency>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter</artifactId>
+                    <version>5.10.0</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter-engine</artifactId>
+                    <version>5.10.0</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.junit.platform</groupId>
+                    <artifactId>junit-platform-engine</artifactId>
+                    <version>1.10.0</version>
+                    <scope>test</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.testng</groupId>
+                    <artifactId>testng</artifactId>
+                    <version>7.11.0</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.junit.support</groupId>
+                    <artifactId>testng-engine</artifactId>
+                    <version>1.0.6</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-devtools-v138</artifactId>
+                    <version>4.34.0</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.apache.maven.surefire</groupId>
+                    <artifactId>surefire-testng</artifactId>
+                    <version>3.2.5</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>io.qameta.allure</groupId>
+                    <artifactId>allure-bom</artifactId>
+                    <version>${allure.version}</version>
+                    <type>pom</type>
+                    <scope>import</scope>
+                </dependency>
+            </dependencies>
+
+        </dependencyManagement>
+
         <dependencies>
-            <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+            <dependency>
+                <groupId>com.microsoft.playwright</groupId>
+                <artifactId>playwright</artifactId>
+            </dependency>
+
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-java</artifactId>
-                <version>4.21.0</version>
             </dependency>
 
             <dependency>
                 <groupId>io.github.bonigarcia</groupId>
                 <artifactId>webdrivermanager</artifactId>
-                <version>5.8.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.microsoft.playwright</groupId>
-                <artifactId>playwright</artifactId>
-                <version>1.44.0</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter</artifactId>
-                <version>5.10.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-engine</artifactId>
-                <version>5.10.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.junit.platform</groupId>
-                <artifactId>junit-platform-engine</artifactId>
-                <version>1.10.0</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>7.11.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.junit.support</groupId>
-                <artifactId>testng-engine</artifactId>
-                <version>1.0.6</version>
             </dependency>
 
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-devtools-v138</artifactId>
-                <version>4.34.0</version>
             </dependency>
 
             <dependency>
-                <groupId>org.apache.maven.surefire</groupId>
-                <artifactId>surefire-testng</artifactId>
-                <version>3.2.5</version>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-testng</artifactId>
+                <scope>test</scope>
             </dependency>
 
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>2.0.16</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
 
-    </dependencyManagement>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>3.5.3</version>
+                </plugin>
+            </plugins>
+        </build>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.microsoft.playwright</groupId>
-            <artifactId>playwright</artifactId>
-        </dependency>
+        <profiles>
+            <profile>
+                <id>all-tests</id>
+                <activation>
+                    <activeByDefault>true</activeByDefault>
+                </activation>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.seleniumhq.selenium</groupId>
+                        <artifactId>selenium-java</artifactId>
+                    </dependency>
+                    <dependency>
+                        <groupId>io.github.bonigarcia</groupId>
+                        <artifactId>webdrivermanager</artifactId>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.microsoft.playwright</groupId>
+                        <artifactId>playwright</artifactId>
+                    </dependency>
 
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-        </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-engine</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.testng</groupId>
+                        <artifactId>testng</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.support</groupId>
+                        <artifactId>testng-engine</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+                    
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-testng</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+                </dependencies>
 
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-        </dependency>
+                <build>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>3.2.5</version>
+                            <configuration>
+                            <includes>
+                                <include>**/junit/**/*Test.java</include>
+                                <include>**/playwright/**/*Test.java</include>
+                            </includes>
+                            <excludes>
+                                    <exclude>**/testng/**</exclude>
+                                </excludes>
+                            <properties>
+                                <property>
+                                <name>listener</name>
+                                <value>org.junit.platform.launcher.listeners.SummaryGeneratingListener</value>
+                                </property>
+                            </properties>
+                            </configuration>
+                        </plugin>
 
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-        </dependency>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-failsafe-plugin</artifactId>
+                            <version>3.2.5</version>
+                            <configuration>
+                                <suiteXmlFiles>
+                                    <suiteXmlFile>src/test/resources/testng-login.xml</suiteXmlFile>
+                                </suiteXmlFiles>
+                                <properties>
+                                    <property>
+                                    <name>junit</name>
+                                    <value>false</value>
+                                    </property>
+                                </properties>
+                            </configuration>
+                            <dependencies>
+                                <dependency>
+                                    <groupId>org.apache.maven.surefire</groupId>
+                                    <artifactId>surefire-testng</artifactId>
+                                    <version>3.2.5</version>
+                                </dependency>
+                            </dependencies>
+                            <executions>
+                                <execution>
+                                    <id>testng-tests</id>
+                                    <goals>
+                                        <goal>integration-test</goal>
+                                        <goal>verify</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </build>
+            </profile>
 
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-devtools-v138</artifactId>
-        </dependency>
-
-
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.5.3</version>
-            </plugin>
-        </plugins>
-    </build>
-
-    <profiles>
-        <profile>
-            <id>all-tests</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-java</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>io.github.bonigarcia</groupId>
-                    <artifactId>webdrivermanager</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>com.microsoft.playwright</groupId>
-                    <artifactId>playwright</artifactId>
-                </dependency>
-
-                <dependency>
-                    <groupId>org.junit.jupiter</groupId>
-                    <artifactId>junit-jupiter-engine</artifactId>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.junit.platform</groupId>
-                    <artifactId>junit-platform-engine</artifactId>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.testng</groupId>
-                    <artifactId>testng</artifactId>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.junit.support</groupId>
-                    <artifactId>testng-engine</artifactId>
-                    <scope>test</scope>
-                </dependency>
+            <profile>
+                <id>testng-tests</id>
+                <activation>
+                    <activeByDefault>false</activeByDefault>
+                </activation>
+                <dependencies>
+                <!--
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-engine</artifactId>
+                        <scope>provided</scope>
+                    </dependency>
+                -->
+                    <dependency>
+                        <groupId>org.testng</groupId>
+                        <artifactId>testng</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.support</groupId>
+                        <artifactId>testng-engine</artifactId>
+                        <scope>test</scope>
+                    </dependency>
                 
-                <dependency>
-                    <groupId>org.apache.maven.surefire</groupId>
-                    <artifactId>surefire-testng</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+                
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-testng</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+                </dependencies>
+                <build>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>3.2.5</version>
+                            <configuration>
+                                <argLine> -Dfile.encoding=${project.build.sourceEncoding} -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar" </argLine>
+                                <suiteXmlFiles>
+                                    <suiteXmlFile>src/test/resources/testng-login.xml</suiteXmlFile>
+                                </suiteXmlFiles>
+                                <testNGArtifactName>org.testng:testng</testNGArtifactName>
+                                <forkCount>2</forkCount> 
+                                <reuseForks>false</reuseForks> 
+                                <excludes>
+                                    <exclude>**/junit/**/*Test.java</exclude>
+                                </excludes>
+                                <systemPropertyVariables>
+                                    <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                                </systemPropertyVariables>
+                                <properties>
+                                    <property>
+                                    <name>junit</name>
+                                    <value>false</value>
+                                    </property>
+                                </properties>
+                            </configuration>
+                            <dependencies>
+                                <dependency>
+                                    <groupId>org.apache.maven.surefire</groupId>
+                                    <artifactId>surefire-testng</artifactId>
+                                    <version>3.2.5</version>
+                                </dependency>
+                                <dependency>
+                                    <groupId>org.aspectj</groupId>
+                                    <artifactId>aspectjweaver</artifactId>
+                                    <version>${aspectj.version}</version>
+                                </dependency>
+                            </dependencies>
+                        </plugin>
+                        <plugin>
+                            <groupId>io.qameta.allure</groupId>
+                            <artifactId>allure-maven</artifactId>
+                            <version>2.15.0</version>
+                            <configuration>
+                                <reportVersion>${allure.version}</reportVersion>
+                                <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <version>3.13.0</version>
+                            <configuration>
+                                <encoding>${project.build.sourceEncoding}</encoding>
+                                <release>17</release>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </build>
+            </profile>
 
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.2.5</version>
-                        <configuration>
-                        <includes>
-                            <include>**/junit/**/*Test.java</include>
-                            <include>**/playwright/**/*Test.java</include>
-                        </includes>
-                        <excludes>
-                                <exclude>**/testng/**</exclude>
-                            </excludes>
-                        <properties>
-                            <property>
-                            <name>listener</name>
-                            <value>org.junit.platform.launcher.listeners.SummaryGeneratingListener</value>
-                            </property>
-                        </properties>
-                        </configuration>
-                    </plugin>
+            <profile>
+                <id>selenium-tests</id>
+                <activation>
+                    <activeByDefault>false</activeByDefault>
+                </activation>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+                </dependencies>
+                <build>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>3.2.5</version>
+                            <configuration>
+                                <includes>
+                                    <include>**/junit/selenium/*Test.java</include>
+                                </includes>
+                                <excludes>
+                                    <exclude>**/testng/**</exclude>
+                                </excludes>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </build>
+            </profile>
 
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-failsafe-plugin</artifactId>
-                        <version>3.2.5</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>src/test/resources/testng-login.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                            <properties>
-                                <property>
-                                <name>junit</name>
-                                <value>false</value>
-                                </property>
-                            </properties>
-                        </configuration>
-                        <dependencies>
-                            <dependency>
-                                <groupId>org.apache.maven.surefire</groupId>
-                                <artifactId>surefire-testng</artifactId>
-                                <version>3.2.5</version>
-                            </dependency>
-                        </dependencies>
-                        <executions>
-                            <execution>
-                                <id>testng-tests</id>
-                                <goals>
-                                    <goal>integration-test</goal>
-                                    <goal>verify</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+            <profile>
+                <id>playwright-tests</id>
+                <activation>
+                    <activeByDefault>false</activeByDefault>
+                </activation>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter</artifactId>
+                        <scope>test</scope>
+                    </dependency>
+                </dependencies>
+                <build>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>3.2.5</version>
+                            <configuration>
+                                <includes>
+                                    <include>**/junit/playwright/*Test.java</include>
+                                </includes>
+                                <excludes>
+                                    <exclude>**/testng/**</exclude>
+                                </excludes>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </build>
+            </profile>
 
-        <profile>
-            <id>testng-tests</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <dependencies>
-            <!--
-                <dependency>
-                    <groupId>org.junit.platform</groupId>
-                    <artifactId>junit-platform-engine</artifactId>
-                    <scope>provided</scope>
-                </dependency>
-            -->
-                <dependency>
-                    <groupId>org.testng</groupId>
-                    <artifactId>testng</artifactId>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.junit.support</groupId>
-                    <artifactId>testng-engine</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            
-                <dependency>
-                    <groupId>org.junit.jupiter</groupId>
-                    <artifactId>junit-jupiter-engine</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            
-                <dependency>
-                    <groupId>org.apache.maven.surefire</groupId>
-                    <artifactId>surefire-testng</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.2.5</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>src/test/resources/testng-login.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                            <testNGArtifactName>org.testng:testng</testNGArtifactName>
-                            <forkCount>2</forkCount> 
-                            <reuseForks>false</reuseForks> 
-                            <excludes>
-                                <exclude>**/junit/**/*Test.java</exclude>
-                            </excludes>
-                            <properties>
-                                <property>
-                                <name>junit</name>
-                                <value>false</value>
-                                </property>
-                            </properties>
-                        </configuration>
-                        <dependencies>
-                            <dependency>
-                                <groupId>org.apache.maven.surefire</groupId>
-                                <artifactId>surefire-testng</artifactId>
-                                <version>3.2.5</version>
-                            </dependency>
-                        </dependencies>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <id>selenium-tests</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.junit.jupiter</groupId>
-                    <artifactId>junit-jupiter</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.2.5</version>
-                        <configuration>
-                            <includes>
-                                <include>**/junit/selenium/*Test.java</include>
-                            </includes>
-                            <excludes>
-                                <exclude>**/testng/**</exclude>
-                            </excludes>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <id>playwright-tests</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.junit.jupiter</groupId>
-                    <artifactId>junit-jupiter</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.2.5</version>
-                        <configuration>
-                            <includes>
-                                <include>**/junit/playwright/*Test.java</include>
-                            </includes>
-                            <excludes>
-                                <exclude>**/testng/**</exclude>
-                            </excludes>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-    </profiles>
-</project>
+        </profiles>
+    </project>
