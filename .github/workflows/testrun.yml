@@ -38,6 +38,11 @@ jobs:
     - name: Run tests
       run: mvn clean verify -P testng-tests
 
+    - name: List current directory contents
+      run: |
+        ls -larth ./
+        ls -larth target/
+
     - name: Load Allure test report history
       uses: actions/checkout@v4
       if: always()
@@ -66,9 +71,9 @@ jobs:
       with:
         name: maven-testng-report
         path: |
-          target/failsafe-reports/
+          target/surefire-reports/
           
-    - name: Upload testng report
+    - name: Upload allure report
       uses: actions/upload-artifact@v4
       with:
         name: maven-allure-report
@@ -94,14 +99,14 @@ jobs:
     - name: Compile for Sonar
       run: mvn compile
 
-    - name: Download reports
+    - name: Download testng reports
       uses: actions/download-artifact@v4
       with:
         name: maven-testng-report
         path: |
           reports/failsafe-reports
 
-    - name: Download reports
+    - name: Download allure reports
       uses: actions/download-artifact@v4
       with:
         name: maven-allure-report
