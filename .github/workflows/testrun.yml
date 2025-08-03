@@ -98,6 +98,7 @@ jobs:
     - name: List current directory contents
       run: |
         ls -larth ./
+        ls -larth target/
         ls -larth reports/
 
     - name: Combine Failsafe TestNG reports
@@ -105,7 +106,7 @@ jobs:
       run: |
         mkdir -p target/combined
         mkdir -p target/combined/allure
-        cp -r reports/target/failsafe-reports target/combined
+        cp -r target/failsafe-reports target/combined
         cp -r reports/allure-history target/combined/allure/
 
     - name: Deploy reports to GitHub Pages
