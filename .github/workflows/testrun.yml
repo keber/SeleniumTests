@@ -53,6 +53,12 @@ jobs:
         gist-id: ${{ secrets.GIST_ID }} 
         token: ${{ secrets.GIST_TOKEN }}
 
+    - name: List current directory contents
+      run: |
+        ls -larth ./
+        ls -larth target/
+        ls -larth build/
+
     - name: Build test report
       uses: simple-elf/allure-report-action@v1.7
       if: always()
