@@ -61,13 +61,19 @@ jobs:
         allure_history: allure-history
         allure_results: allure-results
 
-    - name: Upload reports
+    - name: Upload testng report
       uses: actions/upload-artifact@v4
       with:
-        name: maven-test-reports
+        name: maven-testng-report
         path: |
           target/failsafe-reports/
-          allure-history
+          
+    - name: Upload testng report
+      uses: actions/upload-artifact@v4
+      with:
+        name: maven-allure-report
+        path: |
+          allure-history        
 
   publish-reports:
     name: Upload and Publish Reports to GitHub Pages
@@ -91,14 +97,20 @@ jobs:
     - name: Download reports
       uses: actions/download-artifact@v4
       with:
-        name: maven-test-reports
+        name: maven-testng-report
         path: |
-          reports/
+          reports/failsafe-reports
+
+    - name: Download reports
+      uses: actions/download-artifact@v4
+      with:
+        name: maven-allure-report
+        path: |
+          reports/allure-history
 
     - name: List current directory contents
       run: |
         ls -larth ./
-        ls -larth target/
         ls -larth reports/
 
     - name: Combine Failsafe TestNG reports
@@ -106,7 +118,7 @@ jobs:
       run: |
         mkdir -p target/combined
         mkdir -p target/combined/allure
-        cp -r target/failsafe-reports target/combined
+        cp -r reports/failsafe-reports target/combined
         cp -r reports/allure-history target/combined/allure/
 
     - name: Deploy reports to GitHub Pages
