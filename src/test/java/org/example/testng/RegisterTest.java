@@ -88,7 +88,11 @@ public class RegisterTest implements ITest {
     public void testRegister(String name, String email, String password, String confirmPassword, String expectedResult, String expectedMessage){
         testName = String.format("Register [%s - %s] -> %s", email, password, expectedResult);
 
-        registerPage.register(name, email, password, confirmPassword);
+        String uniqueEmail = email;
+        if (expectedResult.equals("success")){
+            uniqueEmail = email.replace("@", "_" + this.browser + "@");
+        }
+        registerPage.register(name, uniqueEmail, password, confirmPassword);
 
         WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(5));
         
@@ -99,7 +103,7 @@ public class RegisterTest implements ITest {
         else {
             wait.until(ExpectedConditions.visibilityOfElementLocated(registerPage.get_successMessage()));
             assertEquals(registerPage.getSuccessMessage(), expectedMessage);
-            createdUsers.add(email);
+            createdUsers.add(uniqueEmail);
         }
 
         Utils.takeScreenshot("testng_testRegister_after",driver(),this.browser);
