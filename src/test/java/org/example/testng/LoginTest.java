@@ -26,7 +26,7 @@ import io.qameta.allure.*;
 
 // anotaciones de allure
 @Epic("Login")
-@Feature("Validación de crecenciales")
+@Feature("Validación de credenciales")
 public class LoginTest implements ITest {
     private String testName = "";
 
@@ -63,10 +63,9 @@ public class LoginTest implements ITest {
     @Test(dataProvider = "genericData", description = "Login con distintos escenarios")
     @Description("Prueba el inicio de sesión con distintos usuarios y contraseñas")
     public void testLogin(String email, String password, String expectedResult, String expectedMessage){
-        testName = String.format("Logn [%s - %s] -> %s", email, password, expectedResult);
+        testName = String.format("Login [%s - %s] -> %s", email, password, expectedResult);
 
         loginPage.login(email, password);
-        Utils.takeScreenshot("testng_testLogin_before",this.driver,this.browser);
 
         WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
         
