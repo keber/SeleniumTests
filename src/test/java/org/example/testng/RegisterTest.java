@@ -34,10 +34,15 @@ import io.qameta.allure.*;
 public class RegisterTest implements ITest {
     private String testName = "";
 
-    private WebDriver driver;
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
     protected final Logger logger = Logger.getLogger(getClass().getName());
     protected RegisterPage registerPage;
     private String browser;
+  
+    public WebDriver driver() {
+        return driver.get();
+    }
   
     private static final List<String> createdUsers = new ArrayList<>();
 
@@ -52,28 +57,32 @@ public class RegisterTest implements ITest {
     @BeforeMethod
     public void setUp(@Optional("chrome") String browser, @Optional("https://wallet.keber.cl/") String baseUrl) {
         DriverStrategy strategy = DriverStrategySelector.chooseStrategy(browser);
-        this.driver = strategy.setStrategy();
+        driver.set(strategy.setStrategy());
         this.browser = browser;
-        this.driver.get(baseUrl);
-        this.registerPage = new RegisterPage(this.driver);
+        driver().get(baseUrl);
+        this.registerPage = new RegisterPage(driver());
         logger.info("Inicializando navegador con TestNG: ".concat(browser));
     }
 
     @AfterMethod
     public void tearDown() {
-        if (this.driver != null) {
-            this.driver.quit();
+        if (driver() != null) {
+            driver().quit();
+            driver.remove();
         }
     }
 
     @AfterMethod
     public void cleanUpCreatedUsers() {
-        logger.info("Eliminando usuarios creados durante las pruebas:");
-        for (String email : createdUsers) {
-            deleteUser(email);
+        if ( !createdUsers.isEmpty() ) {
+            logger.info("Eliminando usuarios creados durante las pruebas:");
+            for (String email : createdUsers) {
+                deleteUser(email);
+            }
+            createdUsers.clear();
         }
     }
-    
+
     @Test(dataProvider = "genericData", description = "Registro con distintos escenarios")
     @Description("Prueba el registro de usuarios con campos vacíos e incompletos")
     public void testRegister(String name, String email, String password, String confirmPassword, String expectedResult, String expectedMessage){
@@ -81,7 +90,7 @@ public class RegisterTest implements ITest {
 
         registerPage.register(name, email, password, confirmPassword);
 
-        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(5));
         
         if(expectedResult.equals("error")){
             wait.until(ExpectedConditions.visibilityOfElementLocated(registerPage.get_errorMessage()));
@@ -93,7 +102,7 @@ public class RegisterTest implements ITest {
             createdUsers.add(email);
         }
 
-        Utils.takeScreenshot("testng_testRegister_after",this.driver,this.browser);
+        Utils.takeScreenshot("testng_testRegister_after",driver(),this.browser);
 
     }
 
