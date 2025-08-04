@@ -3,6 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 screenshots/
+allure-report/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

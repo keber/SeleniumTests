@@ -1,0 +1,11 @@
+name,email,password,confirmpassword,expectedResult,expectedMessage
+Nombre Apellido,someone@fakeadress.com,123456,123456,success,Registro exitoso
+Nombre Apellido,keberflores@gmail.com,123456,123456,error,Email ya registrado
+Nombre Apellido,someone@fakeadress.com,123456,,error,Debe completar todos los campos obligatorios.
+Nombre Apellido,,123456,123456,error,Debe completar todos los campos obligatorios.
+,someone@fakeadress.com,123456,123456,error,Debe completar todos los campos obligatorios.
+Nombre Apellido,someone@fakeadress.com,,123456,error,Debe completar todos los campos obligatorios.
+Nombre Apellido,someone,123456,123456,error,value is not a valid email address: An email address must have an @-sign.
+Nombre Apellido,someone@,123456,123456,error,value is not a valid email address: There must be something after the @-sign.
+Nombre Apellido,someone@fakeadress,123456,123456,error,value is not a valid email address: The part after the @-sign is not valid. It should have a period.
+Nombre Apellido,someone@fakeadress.,123456,123456,error,value is not a valid email address: An email address cannot end with a period.

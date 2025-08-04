@@ -26,14 +26,19 @@ import io.qameta.allure.*;
 
 // anotaciones de allure
 @Epic("Login")
-@Feature("Validación de crecenciales")
+@Feature("Validación de credenciales")
 public class LoginTest implements ITest {
     private String testName = "";
 
-    private WebDriver driver;
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
     protected final Logger logger = Logger.getLogger(getClass().getName());
     protected LoginPage loginPage;
     private String browser;
+
+    public WebDriver driver() {
+        return driver.get();
+    }
   
     @DataProvider(name = "genericData")
     public Object[][] getDataFromXmlParam(ITestContext context) throws IOException {
@@ -46,29 +51,29 @@ public class LoginTest implements ITest {
     @BeforeMethod
     public void setUp(@Optional("chrome") String browser, @Optional("https://wallet.keber.cl/") String baseUrl) {
         DriverStrategy strategy = DriverStrategySelector.chooseStrategy(browser);
-        this.driver = strategy.setStrategy();
+        driver.set(strategy.setStrategy());
         this.browser = browser;
-        this.driver.get(baseUrl);
-        this.loginPage = new LoginPage(this.driver);
+        driver().get(baseUrl);
+        this.loginPage = new LoginPage(driver());
         logger.info("Inicializando navegador con TestNG: ".concat(browser));
     }
 
     @AfterMethod
     public void tearDown() {
-        if (this.driver != null) {
-            this.driver.quit();
+        if (driver() != null) {
+            driver().quit();
+            driver.remove();
         }
     }
     
     @Test(dataProvider = "genericData", description = "Login con distintos escenarios")
     @Description("Prueba el inicio de sesión con distintos usuarios y contraseñas")
     public void testLogin(String email, String password, String expectedResult, String expectedMessage){
-        testName = String.format("Logn [%s - %s] -> %s", email, password, expectedResult);
+        testName = String.format("Login [%s - %s] -> %s", email, password, expectedResult);
 
         loginPage.login(email, password);
-        Utils.takeScreenshot("testng_testLogin_before",this.driver,this.browser);
 
-        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(5));
         
         if(expectedResult.equals("error")){
             wait.until(ExpectedConditions.visibilityOfElementLocated(loginPage.get_errorMessage()));
@@ -79,7 +84,7 @@ public class LoginTest implements ITest {
             assertEquals(loginPage.getSuccessMessage(), expectedMessage);
         }
 
-        Utils.takeScreenshot("testng_testLogin_after",this.driver,this.browser);
+        Utils.takeScreenshot("testng_testLogin_after",driver(),this.browser);
 
     }
 

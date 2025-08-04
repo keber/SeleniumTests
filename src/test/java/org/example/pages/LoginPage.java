@@ -17,6 +17,7 @@ public class LoginPage {
     private final By loginButton = By.id("login-button");
     private final By errorMessage = By.id("login-error-message");
     private final By successMessage = By.id("login-success-message");
+    private final By registerButton = By.id("register-button");
 
     // Constructor
     public LoginPage(WebDriver driver) {
@@ -46,6 +47,10 @@ public class LoginPage {
         driver.findElement(loginButton).click();
     }
 
+    public void clickRegister() {
+        driver.findElement(registerButton).click();
+    }
+
     public void login(String email, String password) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput));
@@ -53,6 +58,13 @@ public class LoginPage {
         enterEmail(email);
         enterPassword(password);
         clickLogin();
+    }
+
+    public void register(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput));
+
+        clickRegister();
     }
 
     public String getErrorMessage() {
