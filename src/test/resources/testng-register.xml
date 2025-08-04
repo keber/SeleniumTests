@@ -1,22 +1,21 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="LoginSuite" parallel="tests" thread-count="2">
+<suite name="RegisterSuite" parallel="tests" thread-count="2">
   <parameter name="baseUrl" value="https://wallet.keber.cl/" />
-  <parameter name="credentialsFile" value="credentials.tsv" />
   <parameter name="registerTestFile" value="registerTest.csv" />
 
   <listeners>
       <listener class-name="io.qameta.allure.testng.AllureTestNg" />
   </listeners>
-  <test name="LoginChrome">
+  <test name="RegisterChrome">
     <parameter name="browser" value="chrome" />
     <classes>
-      <class name="org.example.testng.LoginTest"/>
+      <class name="org.example.testng.RegisterTest"/>
     </classes>
   </test>
-  <test name="LoginFirefox">
+  <test name="RegisterFirefox">
     <parameter name="browser" value="firefox" />
     <classes>
-      <class name="org.example.testng.LoginTest"/>
+      <class name="org.example.testng.RegisterTest"/>
     </classes>
   </test>
 </suite>
