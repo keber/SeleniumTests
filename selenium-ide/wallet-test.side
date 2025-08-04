@@ -1,0 +1,1033 @@
+{
+  "id": "ba56e0c8-7e2b-4b2c-bd7c-51dc2b8cb613",
+  "version": "2.0",
+  "name": "wallet-test",
+  "url": "https://wallet.keber.cl",
+  "tests": [{
+    "id": "75bf9de7-8f0e-4b51-9c58-406ff1ff344f",
+    "name": "wallet-loginFailed",
+    "commands": [{
+      "id": "a247dd38-3578-4d9b-adda-1cfc6c12d392",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1f35a561-7dec-4db2-8bd3-0aef1046df8b",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-email",
+      "targets": [
+        ["id=login-email", "id"],
+        ["name=login-email", "name"],
+        ["css=#login-email", "css:finder"],
+        ["xpath=//input[@id='login-email']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "unknown@fakemail.com"
+    }, {
+      "id": "fb844879-29d0-486c-b712-a997ee38634e",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-password",
+      "targets": [
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@value='123123123123']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "123123123123"
+    }, {
+      "id": "6508a53f-ef32-4f78-9671-d878fd1ef216",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-email", "id"],
+        ["name=login-email", "name"],
+        ["css=#login-email", "css:finder"],
+        ["xpath=//input[@id='login-email']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e5721975-a5f5-4193-a187-b131be115e1c",
+    "name": "wallet-loginSucceeded",
+    "commands": [{
+      "id": "20b5443e-847f-4b50-b4fd-97b08ce62820",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9bda4407-4b31-4c06-9b8a-ca0fb46967f8",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-email",
+      "targets": [
+        ["id=login-email", "id"],
+        ["name=login-email", "name"],
+        ["css=#login-email", "css:finder"],
+        ["xpath=//input[@id='login-email']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "keberflores@gmail.com"
+    }, {
+      "id": "1cb290a3-d204-477e-8f60-88e04dc413e2",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-password",
+      "targets": [
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@value='123456']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "99e3a303-67a0-4e31-80a8-74774991b77f",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Log in')]",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "48b2c032-e596-4a66-bdc4-9091e874085b",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=login-success-message",
+      "targets": [
+        ["id=login-success-message", "id"],
+        ["css=#login-success-message", "css:finder"],
+        ["xpath=//span[@id='login-success-message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/span[4]", "xpath:idRelative"],
+        ["xpath=//span[4]", "xpath:position"],
+        ["xpath=//span[contains(.,'Login exitoso')]", "xpath:innerText"]
+      ],
+      "value": "Login exitoso"
+    }]
+  }, {
+    "id": "dfb35e9d-6d84-4588-8105-70a9778cb599",
+    "name": "wallet-registerFailed-notValidAddress-withoutAtSign",
+    "commands": [{
+      "id": "790c7a96-97a8-4fdc-ac95-a2c6df25aa98",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "64e45256-b123-446c-b001-7345f6204aec",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b413b1b5-9f00-4d4a-b0d8-91c46071b1a7",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-button",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "089a9540-bacc-4999-a706-7cfdd099730a",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "864f8e83-cb87-48e4-bdb5-2ed762885237",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-name",
+      "targets": [],
+      "value": "Nombre Apellido"
+    }, {
+      "id": "4324d95a-e210-432b-af60-154c8cc41f5a",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-email",
+      "targets": [],
+      "value": "wrongaddress"
+    }, {
+      "id": "1f6489f9-60e5-4c0d-8d13-9a68c5bd0a66",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-password",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "6bb57862-daa7-4e06-99da-c3cf43bed73f",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-confirmpassword",
+      "targets": [
+        ["id=register-confirmpassword", "id"],
+        ["name=register-confirmpassword", "name"],
+        ["css=#register-confirmpassword", "css:finder"],
+        ["xpath=//input[@id='register-confirmpassword']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "ca061ac9-ece9-41f4-bf6c-935dbd852bac",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Sign up')]",
+      "targets": [
+        ["css=.r-13awgt0 > #register-button", "css:finder"],
+        ["xpath=(//button[@id='register-button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign up')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "93fcac34-6dcc-4da9-a01a-dd40c44a149e",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=register-error-message",
+      "targets": [
+        ["id=register-error-message", "id"],
+        ["css=#register-error-message", "css:finder"],
+        ["xpath=//span[@id='register-error-message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/span[6]", "xpath:idRelative"],
+        ["xpath=//span[6]", "xpath:position"],
+        ["xpath=//span[contains(.,'value is not a valid email address: An email address must have an @-sign.')]", "xpath:innerText"]
+      ],
+      "value": "value is not a valid email address: An email address must have an @-sign."
+    }]
+  }, {
+    "id": "9e21f574-b99e-4f2b-a240-90cbc0f54549",
+    "name": "wallet-registerFailed-notValidAddress-withoutDomain",
+    "commands": [{
+      "id": "213cbe55-c2a9-48df-9f39-15c427808e86",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78ca547e-e9b3-4b7e-b417-afe2e25df980",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d3a573e-43d4-4ef4-99cb-0dcf30596ae2",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-button",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "de775c26-6749-42d5-9c45-6c2c294af122",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "29ce802f-c91a-4ecc-9bb2-8924597854d5",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-name",
+      "targets": [],
+      "value": "Nombre Apellido"
+    }, {
+      "id": "6a477ce7-c731-4858-821f-c257b80977d0",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-email",
+      "targets": [],
+      "value": "wrongaddress@"
+    }, {
+      "id": "c9add0ee-77b0-49c3-9bb8-17924662a3b0",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-password",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "3b8539b5-3971-43e2-9691-830fe8a64882",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-confirmpassword",
+      "targets": [
+        ["id=register-confirmpassword", "id"],
+        ["name=register-confirmpassword", "name"],
+        ["css=#register-confirmpassword", "css:finder"],
+        ["xpath=//input[@id='register-confirmpassword']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "d98422a5-20dd-4117-baea-fb23f49427a9",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Sign up')]",
+      "targets": [
+        ["css=.r-13awgt0 > #register-button", "css:finder"],
+        ["xpath=(//button[@id='register-button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign up')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "32d9ed14-174b-4823-8fa5-7b5dfed6052d",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=register-error-message",
+      "targets": [
+        ["id=register-error-message", "id"],
+        ["css=#register-error-message", "css:finder"],
+        ["xpath=//span[@id='register-error-message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/span[6]", "xpath:idRelative"],
+        ["xpath=//span[6]", "xpath:position"],
+        ["xpath=//span[contains(.,'value is not a valid email address: An email address must have an @-sign.')]", "xpath:innerText"]
+      ],
+      "value": "value is not a valid email address: There must be something after the @-sign."
+    }]
+  }, {
+    "id": "6d83ff55-bc2a-4d0a-97f1-452228fac72d",
+    "name": "wallet-registerFailed-notValidAddress-withoutFQD",
+    "commands": [{
+      "id": "296932d1-89e3-4ab9-ac01-ebb77ed24267",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9c3cad27-3a10-45fe-99e0-03a6e9e6db60",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9d361b77-5ae3-4ab5-8eda-89153a585469",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-button",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee0240ac-aeb6-4f47-9f86-fcf3ef33b790",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3c95da5b-e48b-4972-8abc-125adf0c76d1",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-name",
+      "targets": [],
+      "value": "Nombre Apellido"
+    }, {
+      "id": "fc6833b8-6018-4370-a29f-14d68b709ea5",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-email",
+      "targets": [],
+      "value": "wrongaddress@domain"
+    }, {
+      "id": "06bb3811-8812-4b06-945a-cb36afbc6a36",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-password",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "f3c4f000-acf9-48d4-a5c8-1eb8bc3f8dac",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-confirmpassword",
+      "targets": [
+        ["id=register-confirmpassword", "id"],
+        ["name=register-confirmpassword", "name"],
+        ["css=#register-confirmpassword", "css:finder"],
+        ["xpath=//input[@id='register-confirmpassword']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "c94d5287-31f6-4db2-9b8a-f9b0acee1bc1",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Sign up')]",
+      "targets": [
+        ["css=.r-13awgt0 > #register-button", "css:finder"],
+        ["xpath=(//button[@id='register-button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign up')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7df28ae2-30bf-4378-aeb2-51fe62c2650d",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=register-error-message",
+      "targets": [
+        ["id=register-error-message", "id"],
+        ["css=#register-error-message", "css:finder"],
+        ["xpath=//span[@id='register-error-message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/span[6]", "xpath:idRelative"],
+        ["xpath=//span[6]", "xpath:position"],
+        ["xpath=//span[contains(.,'value is not a valid email address: An email address must have an @-sign.')]", "xpath:innerText"]
+      ],
+      "value": "value is not a valid email address: The part after the @-sign is not valid. It should have a period."
+    }]
+  }, {
+    "id": "114ce9c5-d2c6-43bd-ae16-11b0f3d37911",
+    "name": "wallet-registerFailed-notValidAddress-withoutTLD",
+    "commands": [{
+      "id": "4d8fa754-e9db-483f-925f-79d3fd88e73b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9fdd976-1815-47e8-80c9-6ab09557bffb",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f198a22f-f0b0-44db-8628-af08483918d2",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-button",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f9d5fdc-6cdd-42b8-8c6e-887a22c85685",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d1de637-5788-444a-b922-a37379b25a25",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-name",
+      "targets": [],
+      "value": "Nombre Apellido"
+    }, {
+      "id": "2844c2ed-91b5-4c33-9df6-e898f9961fa1",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-email",
+      "targets": [],
+      "value": "wrongaddress@domain."
+    }, {
+      "id": "c01e3f78-6232-44fc-ac2f-a78ecdd21f14",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-password",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "f91c11cd-b04a-487c-9a2d-f18668e6f5a5",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-confirmpassword",
+      "targets": [
+        ["id=register-confirmpassword", "id"],
+        ["name=register-confirmpassword", "name"],
+        ["css=#register-confirmpassword", "css:finder"],
+        ["xpath=//input[@id='register-confirmpassword']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "abc2bb56-7a4d-449a-9d0c-7646ab1bcfc0",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Sign up')]",
+      "targets": [
+        ["css=.r-13awgt0 > #register-button", "css:finder"],
+        ["xpath=(//button[@id='register-button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign up')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a80f9f7b-687b-419c-897e-561ec7dfe855",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=register-error-message",
+      "targets": [
+        ["id=register-error-message", "id"],
+        ["css=#register-error-message", "css:finder"],
+        ["xpath=//span[@id='register-error-message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/span[6]", "xpath:idRelative"],
+        ["xpath=//span[6]", "xpath:position"],
+        ["xpath=//span[contains(.,'value is not a valid email address: An email address must have an @-sign.')]", "xpath:innerText"]
+      ],
+      "value": "value is not a valid email address: An email address cannot end with a period."
+    }]
+  }, {
+    "id": "545a41ad-34bf-491a-962f-48605a06a522",
+    "name": "wallet-registerFailed-emailAlreadyRegistered",
+    "commands": [{
+      "id": "6ec8160a-3eec-469e-9b79-7ce10bbbc740",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9303413d-ac8c-437d-951b-8a22cc2c63e7",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d9d902da-500f-456a-92dd-3af7dd617de5",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-button",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a24a43d2-9b2f-4c97-a11f-4a88624c2f6f",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "82289280-ddba-426c-bf45-7cb8e282a48c",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-name",
+      "targets": [],
+      "value": "Nombre Apellido"
+    }, {
+      "id": "c065c7e5-62e3-4f4d-bb54-69c97d1f52dc",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-email",
+      "targets": [],
+      "value": "wrongaddress@domain.c"
+    }, {
+      "id": "8533223d-a499-48c4-9182-b330513b84ae",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-password",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "5b030e2a-1086-4135-afb3-ef403c2823a8",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-confirmpassword",
+      "targets": [
+        ["id=register-confirmpassword", "id"],
+        ["name=register-confirmpassword", "name"],
+        ["css=#register-confirmpassword", "css:finder"],
+        ["xpath=//input[@id='register-confirmpassword']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "105c5721-8d19-44cc-92a1-eb808944c2fa",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Sign up')]",
+      "targets": [
+        ["css=.r-13awgt0 > #register-button", "css:finder"],
+        ["xpath=(//button[@id='register-button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign up')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa18da92-ed29-4e9f-ac14-9f718d5067d2",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=register-error-message",
+      "targets": [
+        ["id=register-error-message", "id"],
+        ["css=#register-error-message", "css:finder"],
+        ["xpath=//span[@id='register-error-message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/span[6]", "xpath:idRelative"],
+        ["xpath=//span[6]", "xpath:position"],
+        ["xpath=//span[contains(.,'value is not a valid email address: An email address must have an @-sign.')]", "xpath:innerText"]
+      ],
+      "value": "Email ya registrado"
+    }]
+  }, {
+    "id": "51aa2937-1663-4505-bed3-fbf677ca0ed6",
+    "name": "wallet-registerFailed-emptyField-Name",
+    "commands": [{
+      "id": "f098ef1b-02d3-47de-b915-f9f3c4b253c4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e28ca921-37d5-4962-94ce-912b846f1dd0",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "956e33d8-2935-4653-831e-04995b47b800",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-button",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a80901f9-b7a7-42de-8917-ef8e796ac65f",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9d7b7295-0e3f-4bad-9dc4-df69888f063b",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1575cd3a-2f33-4074-b823-598582e074a7",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-email",
+      "targets": [],
+      "value": "wrongaddress@domain.c"
+    }, {
+      "id": "6b938cb4-b4ba-4fec-9caf-539a4b1b757f",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-password",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "0e9c2158-0ee2-4a26-a684-968d12612291",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-confirmpassword",
+      "targets": [
+        ["id=register-confirmpassword", "id"],
+        ["name=register-confirmpassword", "name"],
+        ["css=#register-confirmpassword", "css:finder"],
+        ["xpath=//input[@id='register-confirmpassword']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "27d3b3d2-67d7-484f-9b5a-67766a573c6a",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Sign up')]",
+      "targets": [
+        ["css=.r-13awgt0 > #register-button", "css:finder"],
+        ["xpath=(//button[@id='register-button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign up')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "497b1c28-5e1f-4086-b09e-119d07f5a803",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=register-error-message",
+      "targets": [
+        ["id=register-error-message", "id"],
+        ["css=#register-error-message", "css:finder"],
+        ["xpath=//span[@id='register-error-message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/span[6]", "xpath:idRelative"],
+        ["xpath=//span[6]", "xpath:position"],
+        ["xpath=//span[contains(.,'value is not a valid email address: An email address must have an @-sign.')]", "xpath:innerText"]
+      ],
+      "value": "Debe completar todos los campos obligatorios."
+    }]
+  }, {
+    "id": "3aff244f-b128-4ca9-ae60-fe0aaba1d25d",
+    "name": "wallet-registerFailed-emptyField-Email",
+    "commands": [{
+      "id": "03f0bbee-0280-494f-8295-b949688c98e2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f2fd8a6-0149-4b00-924d-dbe3f161e96c",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0932786a-872e-4238-8b65-cd9c90566749",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-button",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8eece00c-7eb8-49dd-a610-3afdc95f0dbb",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8bcbc907-d777-4dcc-8416-730f1cf34994",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-name",
+      "targets": [],
+      "value": "Nombre Apellido"
+    }, {
+      "id": "c46a432e-d2bd-469b-8ef7-f26802c844ee",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b43ae87-2a29-4653-9402-7938414e8df5",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-password",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "0d47b614-41db-44af-bc9c-e8974aa7d605",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-confirmpassword",
+      "targets": [
+        ["id=register-confirmpassword", "id"],
+        ["name=register-confirmpassword", "name"],
+        ["css=#register-confirmpassword", "css:finder"],
+        ["xpath=//input[@id='register-confirmpassword']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "498cf827-c889-40c0-8e6d-0df8ab3013c0",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Sign up')]",
+      "targets": [
+        ["css=.r-13awgt0 > #register-button", "css:finder"],
+        ["xpath=(//button[@id='register-button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign up')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0829c32-16fd-4909-8491-d473672af1d0",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=register-error-message",
+      "targets": [
+        ["id=register-error-message", "id"],
+        ["css=#register-error-message", "css:finder"],
+        ["xpath=//span[@id='register-error-message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/span[6]", "xpath:idRelative"],
+        ["xpath=//span[6]", "xpath:position"],
+        ["xpath=//span[contains(.,'value is not a valid email address: An email address must have an @-sign.')]", "xpath:innerText"]
+      ],
+      "value": "Debe completar todos los campos obligatorios."
+    }]
+  }, {
+    "id": "4e404174-ca4c-4d15-bb81-e51c8427a362",
+    "name": "wallet-registerFailed-emptyField-Password",
+    "commands": [{
+      "id": "4a43f1c5-f787-4860-a17d-a426d1a3e10a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "85c4c1a9-ba6d-4bdc-adab-4e7f18e38745",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ac88fe5-6234-4a52-af1d-b571945a7b3a",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-button",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7bed7794-b5c9-4676-bb32-af09c63b72f1",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1b041329-0f34-43c1-93ad-794f12f952a2",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-name",
+      "targets": [],
+      "value": "Nombre Apellido"
+    }, {
+      "id": "bf50ad42-2f87-466d-854b-ecb642e6aaef",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-email",
+      "targets": [],
+      "value": "wrongaddress@domain.c"
+    }, {
+      "id": "45fd182b-c1ef-4823-9aaf-04e994fe1a5e",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-password",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "168b3c5c-f96b-4077-840e-e1518de0ab33",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-confirmpassword",
+      "targets": [
+        ["id=register-confirmpassword", "id"],
+        ["name=register-confirmpassword", "name"],
+        ["css=#register-confirmpassword", "css:finder"],
+        ["xpath=//input[@id='register-confirmpassword']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "30eadbd8-6210-42bf-b206-78ac644339b6",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Sign up')]",
+      "targets": [
+        ["css=.r-13awgt0 > #register-button", "css:finder"],
+        ["xpath=(//button[@id='register-button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign up')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc6e1f42-acdc-47cf-a744-0f822b0b0c62",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=register-error-message",
+      "targets": [
+        ["id=register-error-message", "id"],
+        ["css=#register-error-message", "css:finder"],
+        ["xpath=//span[@id='register-error-message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/span[6]", "xpath:idRelative"],
+        ["xpath=//span[6]", "xpath:position"],
+        ["xpath=//span[contains(.,'value is not a valid email address: An email address must have an @-sign.')]", "xpath:innerText"]
+      ],
+      "value": "Debe completar todos los campos obligatorios."
+    }]
+  }, {
+    "id": "7df71cda-54f1-43ad-9a9d-7c146d41c05f",
+    "name": "wallet-registerFailed-emptyField-ConfirmPassword",
+    "commands": [{
+      "id": "bb187fbe-17f9-4545-acfe-1fd3100a1df0",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb818698-4c24-404c-b985-a65a04a42f85",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "da53f382-b111-4a35-b13b-08a232fdad30",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-button",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3df7da7-1504-4496-a151-cb5cae0d0f93",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a8f2bba1-6dc2-48b5-938a-b3505b5c8d07",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-name",
+      "targets": [],
+      "value": "Nombre Apellido"
+    }, {
+      "id": "1e195bc2-5a5f-4ad1-869a-dfedc0551343",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-email",
+      "targets": [],
+      "value": "wrongaddress@domain.c"
+    }, {
+      "id": "78a8c914-4279-43af-b08f-5af62b57f6fc",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-password",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "63e1a298-c50b-433b-809d-bf16df8ffac2",
+      "comment": "",
+      "command": "type",
+      "target": "id=register-confirmpassword",
+      "targets": [
+        ["id=register-confirmpassword", "id"],
+        ["name=register-confirmpassword", "name"],
+        ["css=#register-confirmpassword", "css:finder"],
+        ["xpath=//input[@id='register-confirmpassword']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4a801f8-688f-468b-b0bf-c5d2f79ffe56",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Sign up')]",
+      "targets": [
+        ["css=.r-13awgt0 > #register-button", "css:finder"],
+        ["xpath=(//button[@id='register-button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/div/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign up')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1de17168-fc39-4929-b4af-164c9a5af049",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=register-error-message",
+      "targets": [
+        ["id=register-error-message", "id"],
+        ["css=#register-error-message", "css:finder"],
+        ["xpath=//span[@id='register-error-message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div/span[6]", "xpath:idRelative"],
+        ["xpath=//span[6]", "xpath:position"],
+        ["xpath=//span[contains(.,'value is not a valid email address: An email address must have an @-sign.')]", "xpath:innerText"]
+      ],
+      "value": "Debe completar todos los campos obligatorios."
+    }]
+  }, {
+    "id": "41e74d6a-6839-450d-8995-f0dc5ee39930",
+    "name": "new",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "1c492562-b6e3-48fc-ac1a-208445c93dae",
+    "name": "Login",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["75bf9de7-8f0e-4b51-9c58-406ff1ff344f", "e5721975-a5f5-4193-a187-b131be115e1c"]
+  }, {
+    "id": "4d6112dc-fdb0-4836-9c82-0ef99cdd0a2c",
+    "name": "Register",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["545a41ad-34bf-491a-962f-48605a06a522", "7df71cda-54f1-43ad-9a9d-7c146d41c05f", "3aff244f-b128-4ca9-ae60-fe0aaba1d25d", "51aa2937-1663-4505-bed3-fbf677ca0ed6", "4e404174-ca4c-4d15-bb81-e51c8427a362", "dfb35e9d-6d84-4588-8105-70a9778cb599", "9e21f574-b99e-4f2b-a240-90cbc0f54549", "6d83ff55-bc2a-4d0a-97f1-452228fac72d", "114ce9c5-d2c6-43bd-ae16-11b0f3d37911"]
+  }],
+  "urls": ["https://wallet.keber.cl/"],
+  "plugins": []
+}
