@@ -81,6 +81,7 @@ jobs:
         rm -rf badges-input
         mkdir -p badges-input
         cp -r target/surefire-reports/junitreports badges-input/
+        cd badges-input/
         #cp -r target/failsafe-reports/junitreports badges-input/
 
     - name: Generate Test badge
