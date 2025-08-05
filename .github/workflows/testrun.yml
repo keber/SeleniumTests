@@ -82,7 +82,8 @@ jobs:
         mkdir -p badges-input
         cp -r target/surefire-reports/junitreports badges-input/
         [[ -d target/failsafe-reports ]] && cp -r target/failsafe-reports/junitreports badges-input/
-        rm -r target gh-pages
+        find target/ -name '*.xml'|xargs rm
+        find gh-pages/ -name '*.xml'|xargs rm
 
     - name: Generate Test badge
       if: success() || failure()
