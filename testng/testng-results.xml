@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="20" passed="20" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-07T01:04:02 UTC" name="RegisterSuite" finished-at="2025-09-07T01:04:55 UTC" duration-ms="53403">
+    <groups>
+    </groups>
+    <test started-at="2025-09-07T01:04:02 UTC" name="RegisterChrome" finished-at="2025-09-07T01:04:43 UTC" duration-ms="41162">
+      <class name="org.example.testng.RegisterTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:02 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:13 UTC" duration-ms="11418" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:13 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:16 UTC" duration-ms="2619" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[success]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Registro exitoso]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:16 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:17 UTC" duration-ms="398" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:17 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:17 UTC" duration-ms="97" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:17 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:18 UTC" duration-ms="1484" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:18 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:19 UTC" duration-ms="1323" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[keberflores@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Email ya registrado]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:19 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:19 UTC" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:19 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:20 UTC" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:20 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:21 UTC" duration-ms="1737" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:21 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:23 UTC" duration-ms="1339" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Debe completar todos los campos obligatorios.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:23 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:23 UTC" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:23 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:23 UTC" duration-ms="94" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:23 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:24 UTC" duration-ms="1597" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:24 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:25 UTC" duration-ms="831" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Debe completar todos los campos obligatorios.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:25 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:25 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:25 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:25 UTC" duration-ms="78" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:25 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:27 UTC" duration-ms="1738" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:27 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:28 UTC" duration-ms="1296" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Debe completar todos los campos obligatorios.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:28 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:28 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:28 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:28 UTC" duration-ms="76" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:28 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:30 UTC" duration-ms="1559" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:30 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:31 UTC" duration-ms="1046" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Debe completar todos los campos obligatorios.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:31 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:31 UTC" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:31 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:31 UTC" duration-ms="86" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:31 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:33 UTC" duration-ms="1772" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:33 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:34 UTC" duration-ms="1324" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[value is not a valid email address: An email address must have an @-sign.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:34 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:34 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:34 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:34 UTC" duration-ms="83" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:34 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:36 UTC" duration-ms="1479" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:36 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:37 UTC" duration-ms="1582" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[value is not a valid email address: There must be something after the @-sign.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:37 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:37 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:37 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:37 UTC" duration-ms="72" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:37 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:39 UTC" duration-ms="1459" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:39 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:40 UTC" duration-ms="1532" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[value is not a valid email address: The part after the @-sign is not valid. It should have a period.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:40 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:40 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:40 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:40 UTC" duration-ms="77" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:40 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:42 UTC" duration-ms="1457" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:42 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:43 UTC" duration-ms="1160" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress.]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[value is not a valid email address: An email address cannot end with a period.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:43 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:43 UTC" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@6a969fb8]" started-at="2025-09-07T01:04:43 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:43 UTC" duration-ms="81" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.example.testng.RegisterTest -->
+    </test> <!-- RegisterChrome -->
+    <test started-at="2025-09-07T01:04:02 UTC" name="RegisterFirefox" finished-at="2025-09-07T01:04:55 UTC" duration-ms="53402">
+      <class name="org.example.testng.RegisterTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:02 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:10 UTC" duration-ms="8162" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:10 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:12 UTC" duration-ms="1748" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[success]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Registro exitoso]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:12 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:13 UTC" duration-ms="462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:13 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:13 UTC" duration-ms="800" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:13 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:17 UTC" duration-ms="3874" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:17 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:19 UTC" duration-ms="1476" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[keberflores@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Email ya registrado]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:19 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:19 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:19 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:19 UTC" duration-ms="713" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:19 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:23 UTC" duration-ms="3876" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:23 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:24 UTC" duration-ms="539" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Debe completar todos los campos obligatorios.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:24 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:24 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:24 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:25 UTC" duration-ms="864" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:25 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:29 UTC" duration-ms="4045" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:29 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:29 UTC" duration-ms="662" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Debe completar todos los campos obligatorios.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:29 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:29 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:29 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:30 UTC" duration-ms="839" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:30 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:34 UTC" duration-ms="3421" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:34 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:34 UTC" duration-ms="426" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Debe completar todos los campos obligatorios.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:34 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:34 UTC" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:34 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:35 UTC" duration-ms="857" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:35 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:38 UTC" duration-ms="3164" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:38 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:39 UTC" duration-ms="419" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Debe completar todos los campos obligatorios.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:39 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:40 UTC" duration-ms="1008" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:39 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:39 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:40 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:43 UTC" duration-ms="2893" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:43 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:43 UTC" duration-ms="942" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[value is not a valid email address: An email address must have an @-sign.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:43 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:43 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:43 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:44 UTC" duration-ms="614" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:44 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:46 UTC" duration-ms="2281" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:46 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:47 UTC" duration-ms="841" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[value is not a valid email address: There must be something after the @-sign.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:47 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:47 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:47 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:48 UTC" duration-ms="612" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:48 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:50 UTC" duration-ms="2312" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:50 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:51 UTC" duration-ms="842" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[value is not a valid email address: The part after the @-sign is not valid. It should have a period.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:51 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:51 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:51 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:52 UTC" duration-ms="613" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:52 UTC" name="setUp" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:54 UTC" duration-ms="2311" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://wallet.keber.cl/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:54 UTC" name="testRegister" description="Registro con distintos escenarios" data-provider="genericData" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:55 UTC" duration-ms="858" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nombre Apellido]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[someone@fakeadress.]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[value is not a valid email address: An email address cannot end with a period.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister -->
+        <test-method is-config="true" signature="cleanUpCreatedUsers()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:55 UTC" name="cleanUpCreatedUsers" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:55 UTC" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpCreatedUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.example.testng.RegisterTest@131fcb6f]" started-at="2025-09-07T01:04:55 UTC" name="tearDown" test-instance-name="Register [someone@fakeadress. - 123456] -&gt; error" finished-at="2025-09-07T01:04:55 UTC" duration-ms="611" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.example.testng.RegisterTest -->
+    </test> <!-- RegisterFirefox -->
+  </suite> <!-- RegisterSuite -->
+</testng-results>

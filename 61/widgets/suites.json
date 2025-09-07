@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"e6e8d4cd5255804f1b9dc98b451b292f","name":"RegisterSuite","statistic":{"failed":0,"broken":0,"skipped":0,"passed":20,"unknown":0,"total":20}},{"uid":"2e341ac97abf9bfac7d4314d75ba0718","name":"LoginSuite","statistic":{"failed":0,"broken":0,"skipped":0,"passed":14,"unknown":0,"total":14}}]}
