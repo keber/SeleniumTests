@@ -41,7 +41,7 @@ Este proyecto corresponde a la entrega del Módulo 4 del curso de Automatizació
 │           ├── testng-register.xml    # Suite de pruebas TestNG con parámetros
 │           ├── credentials.tsv        # Datos de prueba login (TSV)
 │           └── registerTest.csv       # Datos de prueba register (CSV)
-└── testng-login.xml      # Configuración de suite
+└── Entrega4.pdf      # Informe 
 ```
 
 ## Requisitos

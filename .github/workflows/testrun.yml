@@ -42,6 +42,9 @@ jobs:
       run: |
         ls -larth ./
         ls -larth target/
+        find target/ -name 'TEST-*.xml' -print0 | awk -F":" '{print $1}'
+        find target/ -name 'TEST-*.xml' -print0 | xargs -0 -r grep testsuite | grep testng | grep tests= | awk -F":" '{print $1,$2}' | awk -F" " '{print $1,$5}'
+        find target/ -name 'TEST-*.xml' -print0 | xargs -0 -r grep testsuite | grep surefire | grep tests= | awk -F":" '{print $1,$6}' | awk -F" " '{print $1, $6}'
 
     - name: Load Allure test report history
       uses: actions/checkout@v4
@@ -50,13 +53,6 @@ jobs:
       with:
         ref: gh-pages
         path: gh-pages
-
-    - name: Generate Test badge
-      if: success() || failure()
-      uses: gaelgirodon/ci-badges-action@v1
-      with:
-        gist-id: ${{ secrets.GIST_ID }} 
-        token: ${{ secrets.GIST_TOKEN }}
 
     - name: Build allure test report
       uses: simple-elf/allure-report-action@v1.7
@@ -79,6 +75,22 @@ jobs:
         name: maven-allure-report
         path: |
           allure-history
+
+    - name: Stage only current surefire reports
+      run: |
+        rm -rf badges-input
+        mkdir -p badges-input
+        cp -r target/surefire-reports/junitreports badges-input/
+        [[ -d target/failsafe-reports ]] && cp -r target/failsafe-reports/junitreports badges-input/
+        find target/ -name '*.xml' -delete
+        find gh-pages/ -name '*.xml' -delete
+
+    - name: Generate Test badge
+      if: success() || failure()
+      uses: gaelgirodon/ci-badges-action@v1
+      with:
+        gist-id: ${{ secrets.GIST_ID }} 
+        token: ${{ secrets.GIST_TOKEN }}
 
   publish-reports:
     name: Upload and Publish Reports to GitHub Pages
